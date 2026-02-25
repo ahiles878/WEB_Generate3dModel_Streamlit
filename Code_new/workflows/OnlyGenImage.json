@@ -1,0 +1,107 @@
+{
+  "757": {
+    "inputs": {
+      "seed": 1070835787361546,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "758",
+        0
+      ],
+      "positive": [
+        "761",
+        0
+      ],
+      "negative": [
+        "763",
+        0
+      ],
+      "latent_image": [
+        "759",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "758": {
+    "inputs": {
+      "ckpt_name": "DreamShaper_8_pruned.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "759": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 4
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "760": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "762",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "761": {
+    "inputs": {
+      "text": "stylized white cat figure, solid 3D model, print-ready, no overhangs, supported pose, thick base, chibi style cat, clean geometry, white background, smooth surface",
+      "clip": [
+        "758",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "762": {
+    "inputs": {
+      "samples": [
+        "757",
+        0
+      ],
+      "vae": [
+        "758",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "763": {
+    "inputs": {
+      "text": "(worst quality, low quality, normal quality, lowres, low detail, oversaturated, undersaturated, overexposed, underexposed, grainy, blurry, bad anatomy, bad hands, missing fingers, extra digits, fewer digits, cropped, jpeg artifacts, signature, watermark, username, artist name), text, font, words, letters, 2D, flat, cartoon, sketch, drawing, painting, illustration, background, shadows, transparent background, semi-transparent, translucent, multiple objects, disconnected parts, floating elements, thin structures, paper-thin, fragile, unsupported overhangs, intersecting meshes, non-manifold geometry, internal cavities, hidden voids, stand",
+      "clip": [
+        "758",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  }
+}
